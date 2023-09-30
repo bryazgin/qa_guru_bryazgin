@@ -3,14 +3,14 @@ from selene import browser, be, have
 
 
 @pytest.fixture()
-def open_browser(browser_size):
-    browser.open('https://google.com')
-
-
-@pytest.fixture()
 def browser_size():
     browser.config.window_width = 1920
     browser.config.window_height = 1080
+
+
+@pytest.fixture()
+def open_browser(browser_size):
+    browser.open('https://google.com')
 
 
 def test_have_text(open_browser, browser_size):
